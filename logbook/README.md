@@ -9,7 +9,7 @@ We list here all the work using Apache Spark in LSSTDESC. Each section is a LSST
 
 ## DC2-analysis
 
-- [TBD](TBD) DC2 Coadd Run1.1p Apache Spark tutorial -- Part I: Apache Spark access.
+- [PR-27](https://github.com/LSSTDESC/DC2-analysis/pull/27) DC2 Coadd Run1.1p Apache Spark tutorial -- Part I: Apache Spark access.
 
 ## Spectractor
 
