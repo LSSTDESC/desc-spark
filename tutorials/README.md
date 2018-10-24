@@ -1,13 +1,13 @@
 # Apache Spark tutorials
 
-You will find (py)spark notebooks to start using Apache Spark. They are intented to be ran on a laptop or at NERSC (JupyterLab) when data access is needed. The goal is to introduce few functionalities of interest (and by no means complete!). Currently available:
+You will find (py)spark notebooks to start using Apache Spark. They are intended to be ran on a laptop or at NERSC (JupyterLab) when data access is needed. The goal is to introduce few functionalities of interest (and by no means complete!). Currently available:
 
 - Apache Spark for beginners.
 - Spark SQL and DataFrames: A tour of data format.
-- Data manipulation: functional programing & distributed computing.
+- Data manipulation: functional programming & distributed computing.
 - Towards DESC DC2 analysis.
 
-For actual DESC contribution, see the [logbook]().
+For actual DESC contribution, see the [logbook](https://github.com/LSSTDESC/desc-spark/tree/master/logbook).
 
 ## Language
 

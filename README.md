@@ -40,7 +40,7 @@ SPARKFITS=com.github.astrolabsoftware:spark-fits_2.11:0.7.1
 # Create the kernel - it will be stored under
 # $HOME/.ipython/kernels/<kernelname>
 python makekernel.py \
-  -kernelname desc-pyspark --desc \ 
+  -kernelname desc-pyspark --desc \
   -pyspark_args "--master ${RESOURCE} \
   --conf spark.eventLog.enabled=true \
   --conf spark.eventLog.dir=file://${LOGDIR} \
@@ -55,7 +55,7 @@ More information can be found at [spark-kernel-nersc](https://github.com/astrola
 
 ## Working at NERSC (batch mode)
 
-NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark ran inside of [Shifter](http://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available at [spark-distributed-analytic-framework](www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
+NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](http://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available at [spark-distributed-analytic-framework](www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
 
 ## Going beyond
 
