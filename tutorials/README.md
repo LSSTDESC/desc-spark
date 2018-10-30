@@ -20,7 +20,7 @@ For actual DESC contributions, see the [logbook](https://github.com/LSSTDESC/des
 ## Language
 
 Spark provides many functionalities exposed through Scala/Python/Java/R API (Scala is the native one).
-As far as DESC is concerned, I would advocate to use the Python API (called PySpark) for obvious reasons. But feel free to put your hands on Scala, it's worth it. For those interested, you can have a look at this [tutorial](https://gitlab.in2p3.fr/MaitresNageurs/QuatreNages/Scala) on Scala.
+As far as DESC is concerned, I would advocate to use the Python API (called PySpark) for obvious reasons. But feel free to put your hands on Scala, it's worth it. For those interested, you can have a look at this [tutorial](https://github.com/astrolabsoftware/scala-tutorials) on Scala.
 
 ## Data Format
 
