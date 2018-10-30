@@ -4,10 +4,11 @@ PySpark notebooks to learn and start using Apache Spark are made available at [A
 
 - Part I: Installation and first steps
 - Part II: Spark SQL and DataFrames
-- Part III: Data manipulation
-- Part IV: Spark UI and debugging
-- Part V: Testing Spark applications
-- Part VI: Interfacing with Spark
+- Part III: From Scala to Python
+- Part IV: PySpark, Numpy, Pandas and co.
+- Part V: Spark UI and debugging
+- Part VI: Testing Spark applications
+- Part VII: Interfacing with Spark
 - Appendix A: Apache Spark @ NERSC
 - Appendix B: Apache Spark @ DESC
 
