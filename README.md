@@ -26,31 +26,21 @@ We provide kernels to work with Apache Spark and DESC. To get a DESC python + Ap
 git clone https://github.com/astrolabsoftware/spark-kernel-nersc.git
 cd spark-kernel-nersc
 
-# Where the Spark logs will be stored
-# Logs can be then be browsed from the Spark UI
-LOGDIR=${SCRATCH}/spark/event_logs
-mkdir -p ${LOGDIR}
-
-# Resource to use. Here we will use 4 threads.
+# Size of the Spark cluster. Here we will use 4 threads.
 RESOURCE=local[4]
 
-# Extra libraries (comma separated if many) to use.
-SPARKFITS=com.github.astrolabsoftware:spark-fits_2.11:0.7.1
-
 # Create the kernel - it will be stored under
-# $HOME/.ipython/kernels/<kernelname>
-python makekernel.py \
-  -kernelname desc-pyspark --desc \
-  -pyspark_args "--master ${RESOURCE} \
+# $HOME/.local/share/jupyter/kernels/
+python desc-kernel.py \
+  -kernelname desc-python-pyspark \
+  -pyspark_args "--master local[4] \
+  --packages com.github.astrolabsoftware:spark-fits_2.11:0.7.1 \
   --conf spark.eventLog.enabled=true \
-  --conf spark.eventLog.dir=file://${LOGDIR} \
-  --conf spark.history.fs.logDirectory=file://${LOGDIR} \
-  --packages ${SPARKFITS}"
-
-
+  --conf spark.eventLog.dir=file://$SCRATCH/spark/event_logs \
+  --conf spark.history.fs.logDirectory=file://$SCRATCH/spark/event_logs"
 ```
 
-And then select the kernel `desc-pyspark` in the JupyerLab [interface](https://jupyter-dev.nersc.gov/).
+And then select the kernel `desc-python-pyspark` in the JupyterLab [interface](https://jupyter-dev.nersc.gov/).
 More information can be found at [spark-kernel-nersc](https://github.com/astrolabsoftware/spark-kernel-nersc).
 
 ## Working at NERSC (batch mode)
