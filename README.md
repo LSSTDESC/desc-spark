@@ -19,34 +19,32 @@ Spark provides many functionalities exposed through Scala/Python/Java/R API (Sca
 
 ## Working at NERSC (JupyterLab)
 
-We provide kernels to work with Apache Spark and DESC. To get a DESC python + Apache Spark kernel, follow these steps:
+We provide a kernel to work with Apache Spark and DESC shipped with your DESC
+environment (see [LSSTDESC/jupyter-kernels](https://github.com/LSSTDESC/jupyter-kernels)). You just need to select the `desc-pyspark` kernel in the JupyterLab interface.
+
+
+In case you want to generate your own DESC python + Apache Spark kernel, follow these steps:
 
 ```bash
 # Clone the repo
 git clone https://github.com/astrolabsoftware/spark-kernel-nersc.git
 cd spark-kernel-nersc
 
-# Size of the Spark cluster. Here we will use 4 threads.
-RESOURCE=local[4]
-
 # Create the kernel - it will be stored under
 # $HOME/.local/share/jupyter/kernels/
 python desc-kernel.py \
-  -kernelname desc-python-pyspark \
-  -pyspark_args "--master ${RESOURCE} \
+  -kernelname desc-pyspark-custom \
+  -pyspark_args "--master local[4] \
   --driver-memory 32g --executor-memory 32g \
-  --packages com.github.astrolabsoftware:spark-fits_2.11:0.7.1 \
-  --conf spark.eventLog.enabled=true \
-  --conf spark.eventLog.dir=file://$SCRATCH/spark/event_logs \
-  --conf spark.history.fs.logDirectory=file://$SCRATCH/spark/event_logs"
+  --packages com.github.astrolabsoftware:spark-fits_2.11:0.7.1"
 ```
 
-And then select the kernel `desc-python-pyspark` in the JupyterLab [interface](https://jupyter-dev.nersc.gov/).
+And then select the kernel `desc-pyspark-custom` in the JupyterLab [interface](https://jupyter-dev.nersc.gov/).
 More information can be found at [spark-kernel-nersc](https://github.com/astrolabsoftware/spark-kernel-nersc).
 
 ## Working at NERSC (batch mode)
 
-NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](http://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available at [spark-distributed-analytic-framework](www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
+NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](https://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available [here](https://www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
 
 ## Going beyond
 
