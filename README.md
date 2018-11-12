@@ -44,7 +44,7 @@ More information can be found at [spark-kernel-nersc](https://github.com/astrola
 
 ## Working at NERSC (batch mode)
 
-NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](https://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available at [spark-distributed-analytic-framework](https://www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
+NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](https://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available [here](https://www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
 
 ## Going beyond
 
