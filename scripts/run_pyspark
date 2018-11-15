@@ -4,4 +4,4 @@ echo "you must first source init-spark.sh"
 exit
 fi
 
-shifter pyspark $SPARKOPTS "$JARS"
+shifter pyspark $SPARKOPTS --jars $JARS
