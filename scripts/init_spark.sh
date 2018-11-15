@@ -2,7 +2,11 @@
 
 #list of jars: currently SparkFITS
 SF=/global/homes/p/plaszczy/Spark/spark-fits-apps/lib/spark-fits_2.11-0.6.0.jar
-JARS=$SF
+echo "SparkFITS=$SF"
+
+export JARS=$SF
+
+
 
 export EXEC_CLASSPATH=$JARS
 
@@ -12,13 +16,6 @@ start-all.sh
 
 export PYSPARK_DRIVER_PYTHON=ipython
 
-echo "SparkFITS=$SF"
+#default options
+export SPARKOPTS="--master $SPARKURL"
 
-master="--master $SPARKURL"
-
-export SPARKOPTS="$master --jars $JARS"
-
-alias run_pyspark="shifter pyspark $SPARKOPTS"
-alias run_spark-shell="shifter spark-shell $SPARKOPTS"
-
-type -all run_pyspark

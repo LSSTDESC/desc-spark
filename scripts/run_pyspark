@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z "$SPARKOPTS" ] ; then
+echo "you must first source init-spark.sh"
+exit
+fi
+
+shifter pyspark $SPARKOPTS "$JARS"
