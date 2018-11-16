@@ -1,7 +1,9 @@
 #!/bin/bash
 if [ -z "$SPARKOPTS" ] ; then
-echo "you must first source init-spark.sh"
+echo "you must first source init_spark.sh"
 exit
 fi
 
-shifter pyspark $SPARKOPTS --jars $JARS
+cmd="shifter pyspark $SPARKOPTS --jars $JARS"
+echo $cmd
+eval $cmd 

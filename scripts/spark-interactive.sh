@@ -3,7 +3,7 @@ nargs=$#
 if ! [ $nargs -eq 2 ]; then
 echo "##################################################################################"
 echo "A script to log on interactive nodes with proper Spark setup"
-echo "once logged in: source init-sparsh.sh"
+echo "once logged in: source init_spark.sh"
 echo ">"
 echo "usage: "
 echo "source spark-interactive.sh N(#nodes) t(mins)"
