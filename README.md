@@ -20,7 +20,19 @@ Spark provides many functionalities exposed through Scala/Python/Java/R API (Sca
 ## Working at NERSC (JupyterLab)
 
 We provide a kernel to work with Apache Spark and DESC shipped with your DESC
-environment (see [LSSTDESC/jupyter-kernels](https://github.com/LSSTDESC/jupyter-kernels)). You just need to select the `desc-pyspark` kernel in the JupyterLab interface.
+environment (see [LSSTDESC/nersc](https://github.com/LSSTDESC/nersc)). You just need to select the `desc-pyspark` kernel in the JupyterLab interface. Note that this kernel is automatically installed in your environment when you use the kernel setup script:
+
+```bash
+source /global/common/software/lsst/common/miniconda/kernels/setup.sh
+```
+
+## Working at NERSC (batch mode)
+
+NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](https://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available [here](https://www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
+
+## Going beyond
+
+We started the [AstroLab Software](https://astrolabsoftware.github.io/) project as a platform for big data developments in astronomy, with focus on Apache Spark. There are several projects of interest for LSST, but they largely go beyond.
 
 
 In case you want to generate your own DESC python + Apache Spark kernel, follow these steps:
@@ -41,11 +53,3 @@ python desc-kernel.py \
 
 And then select the kernel `desc-pyspark-custom` in the JupyterLab [interface](https://jupyter-dev.nersc.gov/).
 More information can be found at [spark-kernel-nersc](https://github.com/astrolabsoftware/spark-kernel-nersc).
-
-## Working at NERSC (batch mode)
-
-NERSC provides support to run Spark at scale. Note that for Spark version 2.3.0+, Spark runs inside of [Shifter](https://www.nersc.gov/research-and-development/user-defined-images/). Complete information is available [here](https://www.nersc.gov/users/data-analytics/data-analytics-2/spark-distributed-analytic-framework/). Example batch scripts will follow soon.
-
-## Going beyond
-
-We started the [AstroLab Software](https://astrolabsoftware.github.io/) project as a platform for big data developments in astronomy, with focus on Apache Spark. There are several projects of interest for LSST, but they largely go beyond.
