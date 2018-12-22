@@ -25,6 +25,27 @@ environment (see [LSSTDESC/nersc](https://github.com/LSSTDESC/nersc)). You just 
 ```bash
 source /global/common/software/lsst/common/miniconda/kernels/setup.sh
 ```
+## Working at NERSC (interactive mode)
+
+The previous JupyterLab mode is limited to 4 cores with a total 8GB
+memory. For more demanding work you may use the NERSC interactive (or
+batch see next part) queues. Then each node has 100GB memory and 32
+cores. Note that the available cache is about 60% of the total memory.
+
+To ease the Spark python usage (pyspark) we provide some scripts located in
+the `/script/` directory:
+
+- on a cori interactive node, first run:
+```source scripts/spark-interactive.sh NODES TIME``` where NODES is
+the number of requested nodes and TIME the session time (in minutes).
+- once logged in:
+```source scripts/init_spark.sh```
+- you can then run the `pyspark` shell with:
+```scripts/run_psyspark```
+
+You enter an `ipython` shell from which you can run interactive
+commands and/or standard python scripts with the usual %run command
+
 
 ## Working at NERSC (batch mode)
 
