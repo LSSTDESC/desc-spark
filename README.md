@@ -33,7 +33,7 @@ batch see next part) queues. Then each node has 100GB memory and 32
 cores. Note that the available cache is about 60% of the total memory.
 
 To ease the Spark python usage (pyspark) we provide some scripts located in
-the `/script/` directory:
+the `/script` directory:
 
 - on a cori interactive node, first run:
 ```source scripts/spark-interactive.sh NODES TIME``` where NODES is
@@ -44,7 +44,11 @@ the number of requested nodes and TIME the session time (in minutes).
 ```scripts/run_psyspark```
 
 You enter an `ipython` shell from which you can run interactive
-commands and/or standard python scripts with the usual %run command
+commands and/or standard python scripts with the usual `%run` magic
+command.
+
+The pyspark version is a customized one including `Anaconda` + a few
+other packages (as `healpy`). If you need other packages submit an issue.
 
 
 ## Working at NERSC (batch mode)
