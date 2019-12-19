@@ -1,16 +1,15 @@
 
 
 #list of jars: currently SparkFITS
-SF=/global/homes/p/plaszczy/Spark/spark-fits-apps/lib/spark-fits_2.11-0.6.0.jar
-echo "SparkFITS=$SF"
+SF=/global/homes/p/plaszczy/SparkLibs/spark-fits_2.11-0.8.3.jar
+HP=/global/homes/p/plaszczy/SparkLibs/jhealpix.jar
 
-export JARS=$SF
+export JARS="$SF,$HP"
 
 # this seems useless
 export EXEC_CLASSPATH=$JARS
 
-module load spark/2.3.0
-module load sbt
+module load spark/$SPARKVERSION
 start-all.sh 
 
 export PYSPARK_DRIVER_PYTHON=ipython
@@ -22,7 +21,7 @@ export PYSPARK_DRIVER_PYTHON=ipython
 #config NERSC (from Lisa G)
 executor_cores=32
 executor_mem=100
-driver_mem=10
+driver_mem=100
 n_executors=$(($SLURM_JOB_NUM_NODES-1))
 
 total_mem=$(($driver_mem+$n_executors*$executor_mem))
