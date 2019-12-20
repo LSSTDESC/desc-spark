@@ -1,13 +1,16 @@
 
 
 #list of jars: currently SparkFITS
-SF=/global/homes/p/plaszczy/SparkLibs/spark-fits_2.11-0.8.3.jar
+SF=/global/homes/p/plaszczy/SparkLibs/spark-fits.jar
 HP=/global/homes/p/plaszczy/SparkLibs/jhealpix.jar
 
 export JARS="$SF,$HP"
 
 # this seems useless
 export EXEC_CLASSPATH=$JARS
+
+#do not load your personal python stuff from .local
+export PYTHONUSERBASE=
 
 module load spark/$SPARKVERSION
 start-all.sh 
