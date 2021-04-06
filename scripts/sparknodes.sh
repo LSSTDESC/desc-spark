@@ -3,10 +3,10 @@ nargs=$#
 if ! [ $nargs -eq 2 ]; then
 echo "##################################################################################"
 echo "A script to log on interactive nodes with proper Spark setup"
-echo "once logged in: source init_spark.sh"
+echo "once logged in: source sparkinit.sh"
 echo ">"
 echo "usage: "
-echo "source spark-interactive.sh N(#nodes) t(mins)"
+echo "source sparknodes.sh N(#nodes) t(mins)"
 echo ">"
 echo "notes: "
 echo " -each cori node has 32 cores and 100GB RAM (from which 60% will be used for cache)"
