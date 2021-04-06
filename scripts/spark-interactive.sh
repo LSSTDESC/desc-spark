@@ -30,15 +30,12 @@ echo "running on $NODES nodes for $t mins on queue $queue"
 
 export NODES
 
-export SPARKVERSION=2.4.4
+#export SPARKVERSION=2.4.4
 #IMG=nersc/spark-$SPARKVERSION:v1
 
-#IMG=lgerhardt/spark_test:v1
-
-#export SPARKVERSION=2.3.0
-IMG=registry.services.nersc.gov/plaszczy/spark_desc:v$SPARKVERSION
-
-
+export SPARKVERSION=3.1.1
+#IMG=lgerhardt/spark-$SPARKVERSION:v1
+IMG=lsstdesc/desc-python:spark-v$SPARKVERSION
 
 echo "IMG=$IMG"
 

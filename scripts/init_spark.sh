@@ -3,8 +3,9 @@
 #list of jars: currently SparkFITS
 SF=/global/homes/p/plaszczy/SparkLibs/spark-fits.jar
 HP=/global/homes/p/plaszczy/SparkLibs/jhealpix.jar
+S3D=/global/homes/p/plaszczy/SparkLibs/spark3d.jar
 
-export JARS="$SF,$HP"
+export JARS="$SF,$HP,$S3D"
 
 # this seems useless
 export EXEC_CLASSPATH=$JARS
@@ -20,6 +21,9 @@ export PYSPARK_DRIVER_PYTHON=ipython
 #default options
 #export SPARKOPTS="--master $SPARKURL"
 
+#use shiipped conda version
+source /root/anaconda3/etc/profile.d/conda.sh
+conda activate base
 
 #config NERSC (from Lisa G)
 executor_cores=32
