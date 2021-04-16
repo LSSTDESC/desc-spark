@@ -16,14 +16,8 @@ export PYTHONUSERBASE=
 module load spark/$SPARKVERSION
 start-all.sh 
 
-export PYSPARK_DRIVER_PYTHON=ipython
-
 #default options
 #export SPARKOPTS="--master $SPARKURL"
-
-#use shiipped conda version
-source /root/anaconda3/etc/profile.d/conda.sh
-conda activate base
 
 #config NERSC (from Lisa G)
 executor_cores=32
@@ -38,3 +32,11 @@ echo "mem=${total_mem}"
 echo "cores=${ncores_tot}"
 
 export SPARKOPTS="--master $SPARKURL --driver-memory ${driver_mem}g --total-executor-cores ${ncores_tot} --executor-cores ${executor_cores} --executor-memory ${executor_mem}g"
+
+#clean
+export PYSPARK_DRIVER_PYTHON=ipython
+export JAVA_HOME=/usr
+
+#enter shifter
+shifter /bin/bash
+

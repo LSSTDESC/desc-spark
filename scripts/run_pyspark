@@ -4,6 +4,14 @@ echo "you must first source init_spark.sh"
 exit
 fi
 
-cmd="shifter pyspark $SPARKOPTS --jars $JARS"
+#is this usefull?
+export JAVA_HOME=/usr
+
+#use shiipped conda version
+source /opt/anaconda3/etc/profile.d/conda.sh
+conda activate base
+
+
+cmd="pyspark $SPARKOPTS --jars $JARS"
 echo $cmd
 eval $cmd 
