@@ -1,4 +1,5 @@
 
+#SPARKVERSION mus be defined from outside
 
 #list of jars: currently SparkFITS
 SF=/global/homes/p/plaszczy/SparkLibs/spark-fits.jar
@@ -16,8 +17,6 @@ export PYTHONUSERBASE=
 module load spark/$SPARKVERSION
 start-all.sh 
 
-#default options
-#export SPARKOPTS="--master $SPARKURL"
 
 #config NERSC (from Lisa G)
 executor_cores=32
@@ -33,10 +32,6 @@ echo "cores=${ncores_tot}"
 
 export SPARKOPTS="--master $SPARKURL --driver-memory ${driver_mem}g --total-executor-cores ${ncores_tot} --executor-cores ${executor_cores} --executor-memory ${executor_mem}g"
 
-#clean
-export PYSPARK_DRIVER_PYTHON=ipython
-export JAVA_HOME=/usr
-
 #enter shifter
 shifter /bin/bash
-
+echo "OK in shifter from now"
